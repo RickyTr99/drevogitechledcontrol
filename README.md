@@ -6,6 +6,24 @@ Un'unica app, in stile Windows 11, per gestire senza software dei produttori:
 - **Mouse Logitech G502 HERO** (USB `046D:C08B`): luci di logo e indicatore DPI (anche sempre acceso, funzione HID++ `0x1300`), livelli DPI, DPI Shift, frequenza di polling, assegnazione dei pulsanti.
 - **Sincronizzazione**: il mouse può seguire colore, effetto e luminosità della tastiera.
 
+## Screenshot
+
+**Tastiera**: editor dei colori per singolo tasto, effetti e luminosità.
+
+![Pagina Tastiera](docs/tastiera.png)
+
+**Mouse**: illuminazione sincronizzata con la tastiera, indicatore DPI e livelli di sensibilità.
+
+![Pagina Mouse](docs/mouse.png)
+
+**Pulsanti del mouse**: ogni tasto può avere un'azione del mouse, DPI, profili, multimedia o una combinazione di tasti.
+
+![Pulsanti del mouse](docs/mouse-pulsanti.png)
+
+**Impostazioni**: avvio con Windows e ripristino dei profili originali del mouse.
+
+![Pagina Impostazioni](docs/impostazioni.png)
+
 ## Uso
 
 Avvia `bin\app\DrevogitechLedControl.exe` (serve il .NET 10 Desktop Runtime, già presente su questo PC).
