@@ -1,0 +1,64 @@
+<Window x:Class="DrevogitechLedControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Drevogitech Led Control" Width="1180" Height="800" MinWidth="940" MinHeight="600"
+        WindowStartupLocation="CenterScreen" Icon="Assets/app.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Navigation pane -->
+        <DockPanel Margin="8,4,8,12">
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="14,10,0,18">
+                <Image Source="Assets/logo.png" Width="22" Height="22" RenderOptions.BitmapScalingMode="HighQuality" />
+                <TextBlock Text="Drevogitech Led Control" FontSize="15" FontWeight="SemiBold" Margin="10,0,0,0"
+                           Foreground="{DynamicResource TextFillColorPrimaryBrush}" VerticalAlignment="Center" />
+            </StackPanel>
+
+            <StackPanel DockPanel.Dock="Bottom" Margin="14,0,8,0">
+                <TextBlock Text="Dispositivi" Style="{StaticResource SettingHint}" Margin="0,0,0,6" />
+                <StackPanel Orientation="Horizontal" Margin="0,2">
+                    <Ellipse x:Name="KbDot" Width="8" Height="8" Fill="Gray" />
+                    <TextBlock Text="Drevo Tyrfing V2" Margin="8,0,0,0" Style="{StaticResource SettingLabel}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,2">
+                    <Ellipse x:Name="MouseDot" Width="8" Height="8" Fill="Gray" />
+                    <TextBlock Text="Logitech G502 HERO" Margin="8,0,0,0" Style="{StaticResource SettingLabel}" />
+                </StackPanel>
+                <TextBlock x:Name="StatusText" Style="{StaticResource SettingHint}" Margin="0,12,0,0" MinHeight="32" />
+            </StackPanel>
+
+            <ListBox x:Name="Nav" Background="Transparent" BorderThickness="0"
+                     ItemContainerStyle="{StaticResource NavItem}" SelectionChanged="Nav_SelectionChanged"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListBoxItem Tag="keyboard">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource Icon}" Text="&#xE765;" />
+                        <TextBlock Text="Tastiera" Margin="14,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem Tag="mouse">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource Icon}" Text="&#xE962;" />
+                        <TextBlock Text="Mouse" Margin="14,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem Tag="settings">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource Icon}" Text="&#xE713;" />
+                        <TextBlock Text="Impostazioni" Margin="14,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
+                </ListBoxItem>
+            </ListBox>
+        </DockPanel>
+
+        <!-- Content area -->
+        <Border Grid.Column="1" CornerRadius="8,0,0,0" BorderThickness="1,1,0,0"
+                Background="{DynamicResource LayerFillColorDefaultBrush}"
+                BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}">
+            <ContentControl x:Name="PageHost" Focusable="False" />
+        </Border>
+    </Grid>
+</Window>

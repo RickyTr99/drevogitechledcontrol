@@ -1,0 +1,49 @@
+<UserControl x:Class="DrevogitechLedControl.Pages.SettingsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="36,28,36,36" MaxWidth="1000">
+            <TextBlock Text="Impostazioni" FontSize="28" FontWeight="SemiBold" Foreground="{DynamicResource TextFillColorPrimaryBrush}" Margin="0,0,0,20" />
+
+            <Border Style="{StaticResource Card}">
+                <Grid>
+                    <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition Width="*" MinWidth="140" /></Grid.ColumnDefinitions>
+                    <TextBlock Style="{StaticResource Icon}" Text="&#xE7E8;" Margin="0,0,16,0" />
+                    <CheckBox Grid.Column="1" x:Name="StartupSwitch" Style="{StaticResource ToggleSwitch}" Click="Startup_Click">
+                        <StackPanel>
+                            <TextBlock Text="Applica all'avvio di Windows" Style="{StaticResource SettingLabel}" />
+                            <TextBlock Text="All'accesso reimposta le luci di tastiera e mouse, poi si chiude (nessun processo resta in esecuzione)" Style="{StaticResource SettingHint}" />
+                        </StackPanel>
+                    </CheckBox>
+                </Grid>
+            </Border>
+
+            <TextBlock Text="Mouse" Style="{StaticResource SectionTitle}" />
+            <Border Style="{StaticResource Card}">
+                <Grid>
+                    <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition Width="*" MinWidth="140" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                    <TextBlock Style="{StaticResource Icon}" Text="&#xE777;" Margin="0,0,16,0" />
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Text="Ripristina i profili originali del mouse" Style="{StaticResource SettingLabel}" />
+                        <TextBlock Text="Riscrive la copia di sicurezza salvata prima della prima modifica (DPI, tasti e luci come erano prima)" Style="{StaticResource SettingHint}" />
+                    </StackPanel>
+                    <Button Grid.Column="2" Content="Ripristina" Click="Restore_Click" />
+                </Grid>
+            </Border>
+
+            <TextBlock Text="Informazioni" Style="{StaticResource SectionTitle}" />
+            <Border Style="{StaticResource Card}">
+                <Grid>
+                    <Grid.ColumnDefinitions><ColumnDefinition Width="Auto" /><ColumnDefinition Width="*" MinWidth="140" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                    <TextBlock Style="{StaticResource Icon}" Text="&#xE946;" Margin="0,0,16,0" />
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Text="Drevogitech Led Control 2.1" Style="{StaticResource SettingLabel}" />
+                        <TextBlock Style="{StaticResource SettingHint}"
+                                   Text="Protocolli: DrevoTyrfing / dtv2 (tastiera), Logitech HID++ 2.0 secondo libratbag (mouse)" />
+                    </StackPanel>
+                    <Button Grid.Column="2" Content="Apri cartella dati" Click="OpenFolder_Click" />
+                </Grid>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

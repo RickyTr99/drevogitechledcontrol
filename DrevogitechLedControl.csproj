@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>DrevogitechLedControl</RootNamespace>
+    <AssemblyName>DrevogitechLedControl</AssemblyName>
+    <Product>Drevogitech Led Control</Product>
+    <AssemblyTitle>Drevogitech Led Control</AssemblyTitle>
+    <Version>2.1.0</Version>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <!-- ThemeMode (Fluent / Windows 11 theme) is still flagged as experimental -->
+    <NoWarn>$(NoWarn);WPF0001</NoWarn>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\app.ico" />
+    <Resource Include="Assets\logo.png" />
+  </ItemGroup>
+
+</Project>
